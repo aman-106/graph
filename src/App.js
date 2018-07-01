@@ -27,34 +27,34 @@ class App extends Component {
     this.label = document.getElementById("label");
     this.value = document.getElementById("value");
     this.title = document.getElementById("title");
-    // bar chart 
-    this.ctx = document.getElementById("myChart");
+    // // bar chart 
+    // this.ctx = document.getElementById("myChart");
 
-    var graphType = this.graphType[this.state.type];
-    var dataset = {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      datasets: [{
-        label: 'sample graph',
-        data: [12, 19, 3, 5, 2, 3],
-      }]
-    };
+    // var graphType = this.graphType[this.state.type];
+    // var dataset = {
+    //   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    //   datasets: [{
+    //     label: 'sample graph',
+    //     data: [12, 19, 3, 5, 2, 3],
+    //   }]
+    // };
 
-    var myChart = new Chart(this.ctx, {
-      type: graphType,
-      data: dataset,
-    });
+    // var myChart = new Chart(this.ctx, {
+    //   type: graphType,
+    //   data: dataset,
+    // });
   }
 
   componentDidUpdate() {
-    var graphType = this.graphType[this.state.type];
-    debugger;
-    var dataset = {
-      labels: this.state.data.labels,
-      datasets: [{
-        label: this.state.data.title,
-        data: this.state.data.values,
-      }]
-    };
+    // var graphType = this.graphType[this.state.type];
+    // debugger;
+    // var dataset = {
+    //   labels: this.state.data.labels,
+    //   datasets: [{
+    //     label: this.state.data.title,
+    //     data: this.state.data.values,
+    //   }]
+    // };
 
     // var myChart = new Chart(this.ctx, {
     //   type: graphType,
@@ -121,7 +121,11 @@ class App extends Component {
         <h3>previos graphs created</h3>
         {
           this.state.dataForGraphs.map((data)=>{
-            return <Graph data={data}/>
+            return (
+              <div style={{'margin':'5px'}}>
+                <Graph data={data}/>
+              </div>
+            );
           })
         }
       </div>
